@@ -27,6 +27,7 @@ http://localhost:8080/oauth/authorize?client_id=clientapp&redirect_uri=http://lo
 http://localhost:9001/callback?code=8uYpdo
 
 ### 2. 获取访问令牌（Client -> Authorization Server, get access_token）
+> postman: 获取访问令牌_authorization_code
 
 curl -X POST --user clientapp:112233 http://localhost:8080/oauth/token -H
 "content-type: application/x-www-form-urlencoded" -d
@@ -46,6 +47,7 @@ ost%3A9001%2Fcallback&scope=read_userinfo"
 
 
 ### 3. 调用API（Client -> ResourcesServer, get resources）
+> postman: 调用 API /api/userinfo
 
 curl -X GET http://localhost:8080/api/userinfo -H "authorization: Bearer 36cded80-b6f5-43b7-bdfc-594788a24530"
 

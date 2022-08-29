@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "7120e020-d7ab-48b5-8721-5f87e40d4b04",
+		"name": "lab01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取访问令牌_authorization_code",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "112233",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "clientapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=authorization_code&redirect_uri=http://localhost:9001/callback&scope=read_userinfo&code=qxG47b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:9001/callback"
+						},
+						{
+							"key": "scope",
+							"value": "read_userinfo"
+						},
+						{
+							"key": "code",
+							"value": "qxG47b",
+							"description": "访问 /oauth/authorize 获得的 code"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取访问令牌_password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "112233",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "clientapp",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=password&redirect_uri=http://localhost:9001/callback&scope=read_userinfo&username=bobo&password=xyz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "password"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:9001/callback"
+						},
+						{
+							"key": "scope",
+							"value": "read_userinfo"
+						},
+						{
+							"key": "username",
+							"value": "bobo",
+							"description": "用户名"
+						},
+						{
+							"key": "password",
+							"value": "xyz",
+							"description": "密码"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取访问令牌_client",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "789",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "clientdevops",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/oauth/token?grant_type=client_credentials&redirect_uri=http://localhost:9001/callback&scope=devops",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:9001/callback"
+						},
+						{
+							"key": "scope",
+							"value": "devops"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "调用 API /api/userinfo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ab5ce2ed-d60d-4b99-9052-868da54f2bad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/userinfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"userinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "调用 API  /api/userlist",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "ab5ce2ed-d60d-4b99-9052-868da54f2bad",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/userlist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"userlist"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -4,6 +4,7 @@
 # 操作方式
 
 ### 1. 获取访问令牌
+> postman: 获取访问令牌_password
 
 curl -X POST --user clientapp:112233 http://localhost:8080/oauth/token -H "accept: application/json" -H "content-type: application/x-www-form-urlencoded" -d "grant_type=password&username=bobo&password=xyz&scope=read_userinfo"
 
@@ -19,6 +20,7 @@ curl -X POST --user clientapp:112233 http://localhost:8080/oauth/token -H "accep
 ```
 
 ### 2. 调用API
+> postman: 调用 API /api/userinfo
 
 curl -X GET http://localhost:8080/api/userinfo -H "authorization: Bearer 58a02fd5-87f5-44ff-bbdd-d429cf6a2f60"
 

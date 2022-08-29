@@ -19,8 +19,7 @@ public class OAuth2AuthorizationServer extends
             .withClient("clientapp")
             .secret("112233")
             .redirectUris("http://localhost:9001/callback") // 随便写的，暂时可以不用
-            // 授权码模式
-            .authorizedGrantTypes("authorization_code")
+            .authorizedGrantTypes("authorization_code") // 授权码模式
             .scopes("read_userinfo", "read_contacts");
     }
 

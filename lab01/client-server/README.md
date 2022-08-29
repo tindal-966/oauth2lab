@@ -4,6 +4,7 @@
 # 操作方式
 
 ### 1. 获取访问令牌
+> postman: 获取访问令牌_client
 
 curl -X POST "http://localhost:8080/oauth/token" --user clientdevops:789 -d
 "grant_type=client_credentials&scope=devops"
@@ -20,6 +21,7 @@ curl -X POST "http://localhost:8080/oauth/token" --user clientdevops:789 -d
 ```
 
 ### 2. 调用API
+> postman: 调用 API /api/userlist
 
 curl -X GET http://localhost:8080/api/userlist -H "authorization: Bearer 776b162a-949e-4dcb-b16b-9985e8171dc0"
 

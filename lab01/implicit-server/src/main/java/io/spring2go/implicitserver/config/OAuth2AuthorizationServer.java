@@ -18,9 +18,8 @@ public class OAuth2AuthorizationServer extends
             .withClient("clientapp")
             .secret("112233")
             .redirectUris("http://localhost:9001/callback")
-            // 简化模式
-            .authorizedGrantTypes("implicit")
-            .accessTokenValiditySeconds(120)
+            .authorizedGrantTypes("implicit") // 简化模式
+            .accessTokenValiditySeconds(120) // 超时
             .scopes("read_userinfo", "read_contacts");
     }
 

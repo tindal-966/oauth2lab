@@ -30,8 +30,7 @@ public class OAuth2AuthorizationServer extends
         clients.inMemory()
             .withClient("clientapp")
             .secret("112233")
-            // 密码模式
-            .authorizedGrantTypes("password")
+            .authorizedGrantTypes("password") // 密码模式
             .scopes("read_userinfo", "read_contacts");
     }
 
