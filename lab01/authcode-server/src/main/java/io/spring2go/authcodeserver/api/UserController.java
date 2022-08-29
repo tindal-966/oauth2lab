@@ -13,7 +13,7 @@ public class UserController {
     @RequestMapping("/api/userinfo")
     public ResponseEntity<UserInfo> getUserInfo() {
         User user = (User) SecurityContextHolder.getContext()
-                .getAuthentication().getPrincipal();
+                .getAuthentication().getPrincipal(); // 注意这里的使用
         String email = user.getUsername() + "@spring2go.com";
 
         UserInfo userInfo = new UserInfo();
